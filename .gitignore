@@ -1,15 +1,18 @@
-# Python
-__pycache__/
-*.py[cod]
-
-# Virtual environment
-.venv/
-
-# PyInstaller build artifacts
-build/
+# C/C++ Build Artifacts
+*.obj
+*.res
+*.exe
+native/*.exe
 dist/
-*.spec
+build/
+
+# Visual Studio / IDE
+.vs/
+*.user
+
+# Python legacy / venv
+.venv/
+__pycache__/
 
 # Logs
-build_log.txt
 *.log

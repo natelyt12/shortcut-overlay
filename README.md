@@ -1,60 +1,55 @@
 # Shortcut Overlay
 
-A sleek, lightweight desktop hotkey visualizer for Windows that displays your shortcut key combinations in real time.
+An ultra-lightweight (**~78 KB**), zero-dependency, glassmorphic desktop shortcut and hotkey visualizer for Windows, built natively in C++ using the Win32 API and GDI+.
 
-Ideal for presentations, video recording, screencasts, live streams, and tutorials.
-
----
-
-## What You Can Do With This App
-
-- **Display Active Shortcuts**: Automatically detects and shows combinations like `Ctrl + Shift + S`, `Win + D`, or `Alt + Tab` right above your taskbar.
-- **Noise-Free Typing**: Intelligently ignores normal typing (regular letters, numbers, spaces, Enter) so your screen stays clean.
-- **Seamless Workflow**: 100% click-through (`WA_TransparentForMouseEvents`) — mouse clicks pass right through the overlay without disrupting your work or games.
-- **Clean Glassmorphic Design**: Translucent dark acrylic style with smooth auto-hide after 3.5 seconds of inactivity.
-- **Single Instance**: Runs quietly in the background; prevents duplicate instances from opening.
+Ideal for presentations, tutorials, video recording, screencasts, and live streams.
 
 ---
 
-## Quick Start
+## ✨ Features
 
-### 1. Run the Application
-- **Option A (Instant, Recommended):** Double-click `run.bat` (runs in the background via `pythonw`, no console window).
-- **Option B (Standalone Executable):** Run `dist\ShortcutOverlay.exe`.
-
-### 2. Exit
-Right-click the **Shortcut Overlay** icon in the Windows System Tray (near the clock) and select **Thoát (Exit)**.
+- **🎯 Smart Shortcut Detection**: Automatically captures and displays combinations like `Ctrl + Shift + S`, `Win + D`, `Alt + Tab`, and function keys (`F1`–`F24`).
+- **🔇 Noise-Free Typing**: Intelligently ignores regular typing (letters, numbers, spaces, Enter, Backspace) so your screen stays clean.
+- **🖱️ 100% Click-Through**: Built with `WS_EX_TRANSPARENT` — mouse clicks pass right through the overlay without interrupting your workflow or games.
+- **💎 Glassmorphic Dark UI**: Translucent dark acrylic style with smooth auto-hide after 3.5 seconds of inactivity.
+- **🔒 Single Instance Guard**: Protected by a Windows Named Mutex to prevent duplicate instances from opening.
+- **⚡ Minimal Resource Footprint**:
+  - Binary size: **~78 KB** (no Python runtime or heavy frameworks needed).
+  - RAM usage: **~3 MB**.
+  - Startup time: **Instant (<5 ms)**.
+  - Zero external dependencies: uses native Windows system libraries (`user32`, `gdi32`, `gdiplus`, `shell32`).
 
 ---
 
-## Development
+## 🚀 Download & Usage
 
-```bash
-# Setup virtual environment
-python -m venv .venv
-.venv\Scripts\activate
+### 1. Download
+Grab the latest pre-compiled `ShortcutOverlay.exe` from the **[GitHub Actions](https://github.com/natelyt12/shortcut-overlay/actions)** tab (under Artifacts of the latest run) or Releases.
 
-# Install dependencies
-pip install -r requirements.txt
+### 2. Run
+Double-click `ShortcutOverlay.exe`. It will launch quietly in the background and show a notification in the Windows System Tray.
 
-# Run
-python main.py
+### 3. Exit
+Right-click the **Shortcut Overlay** icon in the Windows System Tray (near the clock) and select **Exit**.
 
-# Build standalone executable (Python)
-build_exe.bat
+---
+
+## 🛠️ Building from Source
+
+This project has zero external dependencies and compiles with standard Microsoft Visual C++ (MSVC).
+
+### Using MSVC
+Open a **Developer Command Prompt for Visual Studio** and run:
+```bat
+cd native
+build_msvc.bat
 ```
 
----
-
-## ⚡ Native C++ Version (`native/`)
-
-An ultra-lightweight, zero-dependency native C++ / Win32 edition is located in [`native/`](native/):
-- **Binary Size:** ~100 KB (vs ~38 MB in Python).
-- **RAM Usage:** ~3 MB (vs ~40 MB in Python).
-- **Automated Builds:** Automatically compiled by **GitHub Actions** on every push. Download the latest pre-built `.exe` anytime from the **Actions** tab on GitHub!
+### Automated GitHub Actions Build
+Every push to `main` automatically triggers a build via GitHub Actions and uploads the latest compiled binary as an artifact.
 
 ---
 
-## License
+## 📄 License
 
 MIT License

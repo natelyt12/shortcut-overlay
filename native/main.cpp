@@ -296,7 +296,7 @@ LRESULT CALLBACK OverlayWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPara
                 POINT pt;
                 GetCursorPos(&pt);
                 HMENU hMenu = CreatePopupMenu();
-                InsertMenuW(hMenu, 0, MF_BYPOSITION | MF_STRING, ID_TRAY_EXIT, L"Thoát");
+                InsertMenuW(hMenu, 0, MF_BYPOSITION | MF_STRING, ID_TRAY_EXIT, L"Exit");
                 SetForegroundWindow(hwnd);
                 TrackPopupMenu(hMenu, TPM_RIGHTBUTTON, pt.x, pt.y, 0, hwnd, NULL);
                 DestroyMenu(hMenu);
@@ -364,7 +364,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
     g_nid.hIcon = hAppIcon;
     wcscpy_s(g_nid.szTip, L"Shortcut Overlay");
     wcscpy_s(g_nid.szInfoTitle, L"Shortcut Overlay");
-    wcscpy_s(g_nid.szInfo, L"Ứng dụng đã khởi chạy và đang chạy nền.\nChuột phải vào biểu tượng ở khay hệ thống để thoát.");
+    wcscpy_s(g_nid.szInfo, L"Shortcut Overlay is running in the background.\nRight-click the tray icon to exit.");
     g_nid.dwInfoFlags = NIIF_INFO;
     Shell_NotifyIconW(NIM_ADD, &g_nid);
 
