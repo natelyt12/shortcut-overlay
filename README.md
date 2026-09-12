@@ -40,9 +40,18 @@ pip install -r requirements.txt
 # Run
 python main.py
 
-# Build standalone executable
+# Build standalone executable (Python)
 build_exe.bat
 ```
+
+---
+
+## ⚡ Native C++ Version (`native/`)
+
+An ultra-lightweight, zero-dependency native C++ / Win32 edition is located in [`native/`](native/):
+- **Binary Size:** ~100 KB (vs ~38 MB in Python).
+- **RAM Usage:** ~3 MB (vs ~40 MB in Python).
+- **Automated Builds:** Automatically compiled by **GitHub Actions** on every push. Download the latest pre-built `.exe` anytime from the **Actions** tab on GitHub!
 
 ---
 
